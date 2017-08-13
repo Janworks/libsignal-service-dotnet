@@ -175,11 +175,11 @@ namespace Coe.WebSocketWrapper
             _onMessage = onMessage;
         }
 
-        public void Connect()
+        public async void Connect()
         {
             try
             {
-                WebSocket.ConnectAsync(_uri, Token).Wait();
+                await WebSocket.ConnectAsync(_uri, Token);
                 CallOnConnected();
             }
             catch (Exception e)
